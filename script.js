@@ -1,11 +1,6 @@
-
-
-console.log("hello, world")
 const peopleDiv = document.getElementById("people")
 
-
-
-//for loop (maybe map)
+//for loop
 for (let customer of customers){
     let personDiv = document.createElement("div")
     peopleDiv.appendChild(personDiv)
@@ -23,6 +18,7 @@ for (let customer of customers){
     personDiv.innerHTML += `<p class="email">${customer.email}</p>`
 
     //address
+    //state abbreviation pull
     let states = usStates
     let location = customer.location.state
     function customerState(input) {
@@ -45,7 +41,4 @@ for (let customer of customers){
 
     //Customer Since
     personDiv.innerHTML += `<p class="otherInfo2">Customer since: ${moment(customer.registered.date).format("MMM DD, YYYY")}</p>`
-
-    // //close div
-    // peopleDiv.innerHTML += `</div>`
 }
